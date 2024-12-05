@@ -2,6 +2,7 @@
   "name": "bhushankale-portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://bhushank19.github.io/Bhushan-Site/",
   "dependencies": {
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.0",
