@@ -3,20 +3,30 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main  # This will trigger on pushes to the 'main' branch
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js (for React, or adjust accordingly)
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Change this to your required Node version
+
       - name: Install dependencies
         run: npm install
+
       - name: Build the project
-        run: npm run build
+        run: npm run build  # Adjust this to your build command if needed
+
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@github.com"
+          git add -f build  # Adjust if your build output is different
+          git commit -m "Deploy site to GitHub Pages"
+          git push --force "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" main:gh-pages
