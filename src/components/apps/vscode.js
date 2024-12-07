@@ -4,7 +4,7 @@ export default function VsCode() {
   const isLocal = process.env.NODE_ENV === "development"; // Check if running locally
   const src = isLocal
     ? "http://localhost:3000" // Replace with local URL (adjust if needed)
-    : "https://github1s.com/Sharansrj567/"; // Placeholder for GitHub Pages
+    : "https://bhushank19.github.io/Bhushan-Site/"; // Placeholder for GitHub Pages
 
   return (
     <iframe

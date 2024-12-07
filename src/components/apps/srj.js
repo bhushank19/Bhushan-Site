@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactGA from "react-ga";
+// import ReactGA from "react-ga";
 
 export class AboutBhushan extends Component {
   constructor() {
@@ -37,7 +37,7 @@ export class AboutBhushan extends Component {
     localStorage.setItem("about-section", screen);
 
     // google analytics
-    ReactGA.pageview(`/${screen}`);
+    // ReactGA.pageview(`/${screen}`);
 
     this.setState({
       screen: this.screens[screen],
@@ -66,7 +66,7 @@ export class AboutBhushan extends Component {
           <img
             className=" w-3 md:w-4"
             alt="about bhushan"
-            src="./themes/Yaru/status/about.svg"
+            src= {`${process.env.PUBLIC_URL}/themes/Yaru/status/about.svg`}
           />
           <span className=" ml-1 md:ml-2 text-gray-50 ">About Me</span>
         </div>
@@ -84,7 +84,7 @@ export class AboutBhushan extends Component {
           <img
             className=" w-3 md:w-4"
             alt="bhushan' education"
-            src="./themes/Yaru/status/education.svg"
+            src={`${process.env.PUBLIC_URL}/themes/Yaru/status/education.svg`}
           />
           <span className=" ml-1 md:ml-2 text-gray-50 ">Education</span>
         </div>
@@ -102,7 +102,7 @@ export class AboutBhushan extends Component {
           <img
             className=" w-3 md:w-4"
             alt="bhushan' skills"
-            src="./themes/Yaru/status/skills.svg"
+            src={`${process.env.PUBLIC_URL}/themes/Yaru/status/skills.svg`}
           />
           <span className=" ml-1 md:ml-2 text-gray-50 ">Skills</span>
         </div>
@@ -120,7 +120,7 @@ export class AboutBhushan extends Component {
           <img
             className=" w-3 md:w-4"
             alt="bhushan' projects"
-            src="./themes/Yaru/status/projects.svg"
+            src={`${process.env.PUBLIC_URL}/themes/Yaru/status/projects.svg`}
           />
           <span className=" ml-1 md:ml-2 text-gray-50 ">Projects</span>
         </div>
@@ -138,7 +138,7 @@ export class AboutBhushan extends Component {
           <img
             className=" w-3 md:w-4"
             alt="bhushan's resume"
-            src="./themes/Yaru/status/download.svg"
+            src={`${process.env.PUBLIC_URL}/themes/Yaru/status/download.svg`}
           />
           <span className=" ml-1 md:ml-2 text-gray-50 ">Resume</span>
         </div>
@@ -193,7 +193,7 @@ function About() {
       <div className="w-80 md:w-80 my-4 bg-white rounded-full">
         <img
           className="w-full rounded"
-          src="./images/logos/bitmoji.png"
+          src={`${process.env.PUBLIC_URL}/images/logos/bitmoji.png`}
           alt="Bhushan Kale Logo"
         />
       </div>
@@ -569,7 +569,7 @@ function Resume() {
   return (
     <iframe
       className="h-full w-full"
-      src="./files/Bhushan Kale CV.pdf"
+      src={`${process.env.PUBLIC_URL}/files/Bhushan Kale CV.pdf`}
       title="Bhushan Kale CV"
       frameBorder="0"
     ></iframe>

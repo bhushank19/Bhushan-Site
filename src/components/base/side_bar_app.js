@@ -49,6 +49,8 @@ export class SideBarApp extends Component {
         id={"sidebar-" + this.props.id}
       >
         <img className="w-7" src={this.props.icon} alt="macOS App Icon" />
+        
+
         <img
           className={
             (this.state.scaleImage ? " scale " : "") +

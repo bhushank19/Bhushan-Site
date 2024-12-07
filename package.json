@@ -2,7 +2,7 @@
   "name": "bhushankale-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://bhushank19.github.io/Bhushan-Site/",
+  "homepage": "https://bhushank19.github.io/Bhushan-Site",
   "dependencies": {
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.0",
@@ -48,7 +48,7 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@tailwindcss/postcss7-compat": "^2.2.17",
     "autoprefixer": "^10.4.20",
-    "gh-pages": "^6.1.1",
+    "gh-pages": "^6.2.0",
     "postcss": "^8.4.41",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }

@@ -56,7 +56,7 @@ export class Desktop extends Component {
         apps.push({
           id: `new-folder-${folder.id}`,
           title: folder.name,
-          icon: "./themes/Yaru/system/folder.svg",
+          icon: `${process.env.PUBLIC_URL}/themes/Yaru/system/folder.svg`,
           disabled: true,
           favourite: false,
           desktop_shortcut: true,
@@ -450,7 +450,7 @@ export class Desktop extends Component {
       apps.push({
         id: `new-folder-${folder_id}`,
         title: folder_name,
-        icon: "./themes/Yaru/system/folder.svg",
+        icon: `${process.env.PUBLIC_URL}/themes/Yaru/system/folder.svg`,
         disabled: true,
         favourite: false,
         desktop_shortcut: true,

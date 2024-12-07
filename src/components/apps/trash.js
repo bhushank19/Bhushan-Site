@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import $ from "jquery";
+// import $ from "jquery";
 
 export class Trash extends Component {
   constructor() {
@@ -7,32 +7,28 @@ export class Trash extends Component {
     this.trashItems = [
       {
         name: "test.xyz",
-        icon: "./themes/filetypes/php.png",
+        icon: `${process.env.PUBLIC_URL}/themes/filetypes/php.png`,
       },
       {
         name: "React.js",
-        icon: "./themes/filetypes/js.png",
+        icon: `${process.env.PUBLIC_URL}/themes/filetypes/js.png`,
       },
       {
         name: "node_modules",
-        icon: "./themes/Yaru/system/folder.svg",
+        icon: `${process.env.PUBLIC_URL}/themes/Yaru/system/folder.svg`,
       },
 
       {
         name: "atom",
-        icon: "./themes/Yaru/system/folder.svg",
-      },
-      {
-        name: "4th-Semester-Assignments.zip",
-        icon: "./themes/filetypes/zip.png",
+        icon: `${process.env.PUBLIC_URL}/themes/Yaru/system/folder.svg`,
       },
       {
         name: "cache",
-        icon: "./themes/Yaru/system/folder.svg",
+        icon: `${process.env.PUBLIC_URL}/themes/Yaru/system/folder.svg`,
       },
       {
         name: "installer-files",
-        icon: "./themes/Yaru/system/folder.svg",
+        icon: `${process.env.PUBLIC_URL}/themes/Yaru/system/folder.svg`,
       },
     ];
     this.state = {
@@ -49,11 +45,16 @@ export class Trash extends Component {
   }
 
   focusFile = (e) => {
-    // icon
-    $(e.target).children().get(0).classList.toggle("opacity-60");
-    // file name
-    $(e.target).children().get(1).classList.toggle("bg-ub-orange");
+    const iconElement = e.target.querySelector("img");
+    const fileNameElement = e.target.querySelector("span");
+    if (iconElement) {
+      iconElement.classList.toggle("opacity-60");
+    }
+    if (fileNameElement) {
+      fileNameElement.classList.toggle("bg-ub-orange");
+    }
   };
+  
 
   emptyTrash = () => {
     this.setState({ empty: true });
@@ -64,10 +65,11 @@ export class Trash extends Component {
     return (
       <div className="flex-grow flex flex-col justify-center items-center">
         <img
-          className=" w-24"
-          src="./themes/Yaru/status/user-trash-symbolic.svg"
-          alt="macOS Trash"
-        />
+  className="w-24"
+  src={`${process.env.PUBLIC_URL}/themes/Yaru/status/user-trash-symbolic.svg`}
+  alt="macOS Trash"
+/>
+
         <span className="font-bold mt-4 text-xl px-1 text-gray-400">
           Trash is Empty
         </span>

@@ -21,7 +21,7 @@ function BootingScreen(props) {
     >
       <img
         className="md:w-1/8 h-1/4 w-1/8"
-        src="./themes/Yaru/status/cof_orange_hex.png"
+        src={`${process.env.PUBLIC_URL}/themes/Yaru/status/cof_orange_hex.png`}
         alt="Apple Logo"
       />
       <div
@@ -32,7 +32,7 @@ function BootingScreen(props) {
           <div className="bg-white rounded-full flex justify-center items-center w-10 h-10 hover:bg-gray-300">
             <img
               className="w-8"
-              src="./themes/Yaru/status/power-button.png"
+              src={`${process.env.PUBLIC_URL}/themes/Yaru/status/power-button.png`}
               style={{ borderRadius: 50 }}
               alt="Power Button"
             />
@@ -40,7 +40,7 @@ function BootingScreen(props) {
         ) : (
           <img
             className={" w-10" + (props.visible ? " animate-spin " : "")}
-            src="./themes/Yaru/status/process-working-symbolic.png"
+            src={`${process.env.PUBLIC_URL}/themes/Yaru/status/process-working-symbolic.png`}
             alt="macOS Process Symbol"
           />
         )}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Draggable from "react-draggable";
 import Settings from "../apps/settings";
-import ReactGA from "react-ga";
+// import ReactGA from "react-ga";
 
 export class Window extends Component {
   constructor() {
@@ -27,14 +27,14 @@ export class Window extends Component {
     this.setDefaultWindowDimenstion();
 
     // google analytics
-    ReactGA.pageview(`/${this.id}`);
+    // ReactGA.pageview(`/${this.id}`);
 
     // on window resize, resize boundary
     window.addEventListener("resize", this.resizeBoundries);
   }
 
   componentWillUnmount() {
-    ReactGA.pageview("/desktop");
+    // ReactGA.pageview("/desktop");
     window.removeEventListener("resize", this.resizeBoundries);
   }
 
@@ -295,7 +295,7 @@ export function WindowEditButtons(props) {
         onClick={props.close}
       >
         <img
-          src="./themes/Yaru/window/macosClose.png"
+          src={`${process.env.PUBLIC_URL}/themes/Yaru/window/macosClose.png`}
           alt="macOS window close"
           style={{ borderRadius: 50 }}
           className="inline"
@@ -307,7 +307,7 @@ export function WindowEditButtons(props) {
           onClick={props.maximize}
         >
           <img
-            src="./themes/Yaru/window/macosMaximize.png"
+            src={`${process.env.PUBLIC_URL}/themes/Yaru/window/macosMaximize.png`}
             alt="macOS window restore"
             className="inline"
             style={{ borderRadius: 50 }}
@@ -319,7 +319,7 @@ export function WindowEditButtons(props) {
           onClick={props.maximize}
         >
           <img
-            src="./themes/Yaru/window/macosMaximize.png"
+            src={`${process.env.PUBLIC_URL}/themes/Yaru/window/macosMaximize.png`}
             alt="macOS window maximize"
             style={{ borderRadius: 50 }}
             className="inline"
@@ -333,7 +333,7 @@ export function WindowEditButtons(props) {
         onClick={props.close}
       >
         <img
-          src="./themes/Yaru/window/macosMinimize.png"
+          src={`${process.env.PUBLIC_URL}/themes/Yaru/window/macosMinimize.png`}
           alt="macOS window close"
           style={{ borderRadius: 50 }}
           className="inline"

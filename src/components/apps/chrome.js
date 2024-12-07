@@ -76,7 +76,7 @@ export class Chrome extends Component {
         >
           <img
             className="w-5"
-            src="./themes/Yaru/status/chrome_refresh.svg"
+            src={`${process.env.PUBLIC_URL}/themes/Yaru/status/chrome_refresh.svg`}
             alt="macOS Chrome Refresh"
           />
         </div>
@@ -86,7 +86,7 @@ export class Chrome extends Component {
         >
           <img
             className="w-5"
-            src="./themes/Yaru/status/chrome_home.svg"
+            src={`${process.env.PUBLIC_URL}/themes/Yaru/status/chrome_home.svg`}
             alt="macOS Chrome Home"
           />
         </div>

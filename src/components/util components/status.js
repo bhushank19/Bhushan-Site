@@ -31,7 +31,7 @@ export default function Status() {
     <div className="flex justify-center items-center">
       <span className="mx-1.5" onClick={toggleFullscreen}>
         <img
-          src="./themes/Yaru/status/fullscreen.svg"
+          src={`${process.env.PUBLIC_URL}/themes/Yaru/status/fullscreen.svg`}
           alt="fullscreen-toggle"
           className="inline status-symbol"
           style={{
@@ -45,21 +45,21 @@ export default function Status() {
       </span>
       <span className="mx-1.5">
         <img
-          src="./themes/Yaru/status/network-wireless-signal-good-symbolic.svg"
+          src={`${process.env.PUBLIC_URL}/themes/Yaru/status/network-wireless-signal-good-symbolic.svg`}
           alt="macOS wifi"
           className="inline status-symbol"
         />
       </span>
       <span className="mx-1.5">
         <img
-          src="./themes/Yaru/status/audio-volume-medium-symbolic.svg"
+          src={`${process.env.PUBLIC_URL}/themes/Yaru/status/audio-volume-medium-symbolic.svg`}
           alt="macOS sound"
           className="inline status-symbol"
         />
       </span>
       <span className="mx-1.5">
         <img
-          src="./themes/Yaru/status/battery-good-symbolic.svg"
+          src={`${process.env.PUBLIC_URL}/themes/Yaru/status/battery-good-symbolic.svg`}
           alt="macOS battry"
           className="inline status-symbol"
         />

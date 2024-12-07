@@ -69,10 +69,11 @@ export function AllApps() {
       }}
     >
       <img
-        className="w-7"
-        src="./themes/Yaru/system/view-app-grid-symbolic.svg"
-        alt="macOS view app"
-      />
+  className="w-7"
+  src={`${process.env.PUBLIC_URL}/themes/Yaru/system/view-app-grid-symbolic.svg`}
+  alt="macOS view app"
+/>
+
       <div
         className={
           (title ? " visible " : " invisible ") +

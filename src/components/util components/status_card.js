@@ -46,7 +46,7 @@ export class StatusCard extends Component {
         <div className="w-64 py-1.5 flex items-center justify-center bg-ub-gedit-dark hover:bg-ub-warm-grey hover:bg-opacity-20">
           <div className="w-8">
             <img
-              src="./themes/Yaru/status/audio-headphones-symbolic.svg"
+              src={`${process.env.PUBLIC_URL}/themes/Yaru/status/audio-headphones-symbolic.svg`}
               alt="macOS headphone"
             />
           </div>
@@ -64,7 +64,7 @@ export class StatusCard extends Component {
         <div className="w-64 py-1.5 flex items-center justify-center bg-ub-gedit-dark hover:bg-ub-warm-grey hover:bg-opacity-20">
           <div className="w-8">
             <img
-              src="./themes/Yaru/status/display-brightness-symbolic.svg"
+              src={`${process.env.PUBLIC_URL}/themes/Yaru/status/display-brightness-symbolic.svg`}
               alt="macOS brightness"
             />
           </div>
@@ -85,19 +85,19 @@ export class StatusCard extends Component {
         <div className="w-64 py-1.5 flex items-center justify-center bg-ub-gedit-dark hover:bg-ub-warm-grey hover:bg-opacity-20">
           <div className="w-8">
             <img
-              src="./themes/Yaru/status/network-wireless-signal-good-symbolic.svg"
+              src={`${process.env.PUBLIC_URL}/themes/Yaru/status/network-wireless-signal-good-symbolic.svg`}
               alt="macOS wifi"
             />
           </div>
           <div className="w-2/3 flex items-center justify-between text-gray-400">
-            <span>Redmi Note 8 Pro</span>
+            <span>Bhushan Wifi 5GHz</span>
             <SmallArrow angle="right" />
           </div>
         </div>
         <div className="w-64 py-1.5 flex items-center justify-center bg-ub-gedit-dark hover:bg-ub-warm-grey hover:bg-opacity-20">
           <div className="w-8">
             <img
-              src="./themes/Yaru/status/bluetooth-symbolic.svg"
+              src={`${process.env.PUBLIC_URL}/themes/Yaru/status/bluetooth-symbolic.svg`}
               alt="macOS bluetooth"
             />
           </div>
@@ -109,7 +109,7 @@ export class StatusCard extends Component {
         <div className="w-64 py-1.5 flex items-center justify-center bg-ub-gedit-dark hover:bg-ub-warm-grey hover:bg-opacity-20">
           <div className="w-8">
             <img
-              src="./themes/Yaru/status/battery-good-symbolic.svg"
+              src={`${process.env.PUBLIC_URL}/themes/Yaru/status/battery-good-symbolic.svg`}
               alt="macOS battery"
             />
           </div>
@@ -127,7 +127,7 @@ export class StatusCard extends Component {
         >
           <div className="w-8">
             <img
-              src="./themes/Yaru/status/emblem-system-symbolic.svg"
+              src={`${process.env.PUBLIC_URL}/themes/Yaru/status/emblem-system-symbolic.svg`}
               alt="macOS settings"
             />
           </div>
@@ -141,7 +141,7 @@ export class StatusCard extends Component {
         >
           <div className="w-8">
             <img
-              src="./themes/Yaru/status/changes-prevent-symbolic.svg"
+              src={`${process.env.PUBLIC_URL}/themes/Yaru/status/changes-prevent-symbolic.svg`}
               alt="macOS lock"
             />
           </div>
@@ -155,7 +155,7 @@ export class StatusCard extends Component {
         >
           <div className="w-8">
             <img
-              src="./themes/Yaru/status/system-shutdown-symbolic.svg"
+              src={`${process.env.PUBLIC_URL}/themes/Yaru/status/system-shutdown-symbolic.svg`}
               alt="macOS power"
             />
           </div>

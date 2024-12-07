@@ -1,6 +1,10 @@
 module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}", // Add this line
+    "./public/index.html",        // Add this if using CRA
+  ],
   theme: {
     backgroundColor: theme => ({
       ...theme('colors'),

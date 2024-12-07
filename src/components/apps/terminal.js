@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import $ from "jquery";
-import ReactGA from "react-ga";
+// import ReactGA from "react-ga";
 
 export class Terminal extends Component {
   constructor() {
@@ -113,9 +113,10 @@ export class Terminal extends Component {
   };
 
   focusCursor = (e) => {
-    clearInterval(this.cursor);
-    this.startCursor($(e.target).data("row-id"));
+    const id = e.target.dataset.rowId;
+    this.startCursor(id);
   };
+  
 
   unFocusCursor = (e) => {
     this.stopCursor($(e.target).data("row-id"));
@@ -123,19 +124,21 @@ export class Terminal extends Component {
 
   startCursor = (id) => {
     clearInterval(this.cursor);
-    $(`input#terminal-input-${id}`).trigger("focus");
-    // On input change, set current text in span
-    $(`input#terminal-input-${id}`).on("input", function () {
-      $(`#cmd span#show-${id}`).text($(this).val());
+    const inputElement = document.querySelector(`input#terminal-input-${id}`);
+    inputElement.focus();
+  
+    inputElement.addEventListener("input", (event) => {
+      const spanElement = document.querySelector(`#show-${id}`);
+      spanElement.textContent = event.target.value;
     });
-    this.cursor = window.setInterval(function () {
-      if ($(`#cursor-${id}`).css("visibility") === "visible") {
-        $(`#cursor-${id}`).css({ visibility: "hidden" });
-      } else {
-        $(`#cursor-${id}`).css({ visibility: "visible" });
-      }
+  
+    this.cursor = setInterval(() => {
+      const cursorElement = document.querySelector(`#cursor-${id}`);
+      cursorElement.style.visibility =
+        cursorElement.style.visibility === "visible" ? "hidden" : "visible";
     }, 500);
   };
+  
 
   stopCursor = (id) => {
     clearInterval(this.cursor);
@@ -270,13 +273,13 @@ export class Terminal extends Component {
         this.closeTerminal();
         return;
       case "sudo":
-        ReactGA.event({
-          category: "Sudo Access",
-          action: "lol",
-        });
+        // ReactGA.event({
+        //   category: "Sudo Access",
+        //   action: "lol",
+        // });
 
-        result =
-          "<img class=' w-2/5' src='./images/memes/used-sudo-command.jpg' />";
+        result = `<img class='w-2/5' src='${process.env.PUBLIC_URL}/images/memes/used-sudo-command.jpg' />`;
+
         break;
       default:
         result =
@@ -288,30 +291,36 @@ export class Terminal extends Component {
     this.appendTerminalRow();
   };
 
+  // xss(str) {
+  //   if (!str) return;
+  //   return str
+  //     .split("")
+  //     .map((char) => {
+  //       switch (char) {
+  //         case "&":
+  //           return "&amp";
+  //         case "<":
+  //           return "&lt";
+  //         case ">":
+  //           return "&gt";
+  //         case '"':
+  //           return "&quot";
+  //         case "'":
+  //           return "&#x27";
+  //         case "/":
+  //           return "&#x2F";
+  //         default:
+  //           return char;
+  //       }
+  //     })
+  //     .join("");
+  // }
   xss(str) {
-    if (!str) return;
-    return str
-      .split("")
-      .map((char) => {
-        switch (char) {
-          case "&":
-            return "&amp";
-          case "<":
-            return "&lt";
-          case ">":
-            return "&gt";
-          case '"':
-            return "&quot";
-          case "'":
-            return "&#x27";
-          case "/":
-            return "&#x2F";
-          default:
-            return char;
-        }
-      })
-      .join("");
+    const div = document.createElement("div");
+    div.innerText = str;
+    return div.innerHTML;
   }
+  
 
   render() {
     return (

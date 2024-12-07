@@ -3,7 +3,7 @@ import BootingScreen from "./screen/booting_screen";
 import Desktop from "./screen/desktop";
 import LockScreen from "./screen/lock_screen";
 import Navbar from "./screen/navbar";
-import ReactGA from "react-ga";
+// import ReactGA from "react-ga";
 
 export default class MacOS extends Component {
   constructor() {
@@ -60,11 +60,11 @@ export default class MacOS extends Component {
 
   lockScreen = () => {
     // google analytics
-    ReactGA.pageview("/lock-screen");
-    ReactGA.event({
-      category: `Screen Change`,
-      action: `Set Screen to Locked`,
-    });
+    // ReactGA.pageview("/lock-screen");
+    // ReactGA.event({
+    //   category: `Screen Change`,
+    //   action: `Set Screen to Locked`,
+    // });
 
     document.getElementById("status-bar").blur();
     setTimeout(() => {
@@ -74,7 +74,7 @@ export default class MacOS extends Component {
   };
 
   unLockScreen = () => {
-    ReactGA.pageview("/desktop");
+    // ReactGA.pageview("/desktop");
 
     window.removeEventListener("click", this.unLockScreen);
     window.removeEventListener("keypress", this.unLockScreen);
@@ -89,11 +89,11 @@ export default class MacOS extends Component {
   };
 
   shutDown = () => {
-    ReactGA.pageview("/switch-off");
-    ReactGA.event({
-      category: `Screen Change`,
-      action: `Switched off the macOS`,
-    });
+    // ReactGA.pageview("/switch-off");
+    // ReactGA.event({
+    //   category: `Screen Change`,
+    //   action: `Switched off the macOS`,
+    // });
 
     document.getElementById("status-bar").blur();
     this.setState({ shutDownScreen: true });
@@ -101,7 +101,7 @@ export default class MacOS extends Component {
   };
 
   turnOn = () => {
-    ReactGA.pageview("/desktop");
+    // ReactGA.pageview("/desktop");
 
     this.setState({ shutDownScreen: false, booting_screen: true });
     this.setTimeOutBootScreen();
