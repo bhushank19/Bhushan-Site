@@ -1,3 +1,26 @@
+# name: Deploy to GitHub Pages
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v3
+#       - name: Install dependencies
+#         run: npm install
+#       - name: Build the project
+#         run: npm run build
+#       - name: Deploy to GitHub Pages
+#         uses: peaceiris/actions-gh-pages@v3
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           publish_dir: ./build
+
 name: Deploy to GitHub Pages
 
 on:
@@ -12,21 +35,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js (for React, or adjust accordingly)
+      - name: Set up Node.js (adjust the version as needed)
         uses: actions/setup-node@v2
         with:
-          node-version: '14'  # Change this to your required Node version
+          node-version: '14'
 
       - name: Install dependencies
         run: npm install
 
       - name: Build the project
-        run: npm run build  # Adjust this to your build command if needed
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-actions@github.com"
-          git add -f build  # Adjust if your build output is different
+          git add -f build
           git commit -m "Deploy site to GitHub Pages"
           git push --force "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" main:gh-pages
+
