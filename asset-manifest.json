@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Bhushan-Site/static/css/main.c2a21d2d.css",
-    "main.js": "/Bhushan-Site/static/js/main.3113ba6c.js",
+    "main.js": "/Bhushan-Site/static/js/main.8a2c721f.js",
     "static/js/488.774f2bbd.chunk.js": "/Bhushan-Site/static/js/488.774f2bbd.chunk.js",
     "index.html": "/Bhushan-Site/index.html",
     "main.c2a21d2d.css.map": "/Bhushan-Site/static/css/main.c2a21d2d.css.map",
-    "main.3113ba6c.js.map": "/Bhushan-Site/static/js/main.3113ba6c.js.map",
+    "main.8a2c721f.js.map": "/Bhushan-Site/static/js/main.8a2c721f.js.map",
     "488.774f2bbd.chunk.js.map": "/Bhushan-Site/static/js/488.774f2bbd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c2a21d2d.css",
-    "static/js/main.3113ba6c.js"
+    "static/js/main.8a2c721f.js"
   ]
 }
