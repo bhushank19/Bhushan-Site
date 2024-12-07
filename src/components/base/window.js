@@ -175,7 +175,10 @@ export class Window extends Component {
         onStop={this.changeCursorToDefault}
         onDrag={this.checkOverlap}
         allowAnyClick={false}
-        defaultPosition={{ x: this.startX, y: this.startY }}
+        defaultPosition={{
+          x: (window.innerWidth - window.innerWidth * (this.state.width / 100.0)) / 2,
+          y: (window.innerHeight - window.innerHeight * (this.state.height / 100.0)) / 2,
+        }}
         bounds={{
           left: 0,
           top: 0,
